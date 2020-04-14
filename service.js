@@ -1,12 +1,12 @@
 const express = require('express') ;
-let hours = new Date().getHours
+let hours = new Date().getHours()
 const app=express();
 
 //Site open Condition
 
 app.get('/', (req, res)=> {
-    if ( (hours >8) && (hours <17) ) res.sendFile(__dirname + '/public/Home.html');
-    else res.sendFile(__dirname + '/public/UnlockOffice.html');
+     ( (hours >=8) && (hours <=17) ) ? res.sendFile(__dirname + '/public/Home.html')
+    :res.sendFile(__dirname + '/public/UnlockOffice.html');
   })
 
 
